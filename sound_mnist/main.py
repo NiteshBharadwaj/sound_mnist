@@ -1,7 +1,10 @@
+from utils import model, wav2mfcc, get_data
+X_train, X_test, y_train, y_test, cnn_model = get_data.get_all()
+
 from comet_ml import Experiment
 experiment = Experiment(project_name="soundmnist")
 
-from utils import model, wav2mfcc, get_data
+
 import test
 
 # Tensorboard

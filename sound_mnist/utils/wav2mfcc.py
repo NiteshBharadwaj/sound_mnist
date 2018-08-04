@@ -15,11 +15,13 @@ def get_data():
 
     labels = []
     mfccs = []
+    resource_path = os.path.join(os.path.split(__file__)[0], "../recordings")
 
-    for f in os.listdir('./recordings'):
+    for f in os.listdir(resource_path):
         if f.endswith('.wav'):
             # MFCC
-            mfccs.append(wav2mfcc('./recordings/' + f))
+            cur_res = os.path.join(resource_path,f)
+            mfccs.append(wav2mfcc(cur_res))
 
             # List of labels
             label = f.split('_')[0]

@@ -1,8 +1,9 @@
-import utils
+import sound_mnist.utils.wav2mfcc as wav2mfcc
+import sound_mnist.utils.model as smodel
 from sklearn.model_selection import train_test_split
 
 def get_all():
-    mfccs, labels = utils.wav2mfcc.get_data()
+    mfccs, labels = wav2mfcc.get_data()
 
     dim_1 = mfccs.shape[1]
     dim_2 = mfccs.shape[2]
@@ -17,6 +18,6 @@ def get_all():
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
 
-    model = utils.model.get_cnn_model(input_shape, classes)
+    model = smodel.get_cnn_model(input_shape, classes)
 
     return X_train, X_test, y_train, y_test, model
