@@ -1,6 +1,6 @@
 import keras
 from sklearn.metrics import classification_report
-from utils import wav2mfcc, model, get_data
+from sound_mnist.utils import wav2mfcc, model, get_data
 from keras.utils import to_categorical
 
 def check_preds(X, y):
